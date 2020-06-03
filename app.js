@@ -156,10 +156,15 @@ app.get("/aboutUs",(req,res)=>{
   res.render('aboutUs');
 });
 
+//Port for heroku
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8080;
+}
 
 //Listen to port and use the port
-app.listen(8080, ()=>{
-    console.log("Server running at port 8080");
+app.listen(port, ()=>{
+    console.log("Server running at Successfully");
 });
 
 
